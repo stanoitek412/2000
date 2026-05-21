@@ -1,0 +1,356 @@
+export interface Product {
+  id: string;
+  name: string;
+  nameEn: string;
+  category: ProductCategory;
+  price: number;
+  currency: string;
+  region: string[];
+  description: string;
+  descriptionEn: string;
+  redemption: string;
+  icon: string;
+  tags: string[];
+  inStock: boolean;
+}
+
+export type ProductCategory = 'gift-cards' | 'mobile-topup' | 'gaming' | 'entertainment' | 'shopping' | 'food';
+
+export interface CategoryInfo {
+  id: ProductCategory;
+  name: string;
+  nameEn: string;
+  icon: string;
+}
+
+export const categories: CategoryInfo[] = [
+  { id: 'gift-cards', name: '礼品卡', nameEn: 'Gift Cards', icon: '🎁' },
+  { id: 'mobile-topup', name: '话费充值', nameEn: 'Mobile Top-up', icon: '📱' },
+  { id: 'gaming', name: '游戏', nameEn: 'Gaming', icon: '🎮' },
+  { id: 'entertainment', name: '娱乐', nameEn: 'Entertainment', icon: '🎬' },
+  { id: 'shopping', name: '购物', nameEn: 'Shopping', icon: '🛍️' },
+  { id: 'food', name: '美食', nameEn: 'Food & Drink', icon: '🍕' },
+];
+
+export const products: Product[] = [
+  {
+    id: 'amazon-us-100',
+    name: 'Amazon 美国礼品卡',
+    nameEn: 'Amazon US Gift Card',
+    category: 'gift-cards',
+    price: 100,
+    currency: 'USD',
+    region: ['US'],
+    description: 'Amazon.com 礼品卡，可用于购买数百万种商品，包括电子产品、服装、家居用品等。礼品卡金额会自动应用到您的 Amazon 账户余额中。',
+    descriptionEn: 'Amazon.com Gift Card can be used to purchase millions of items including electronics, clothing, home goods and more.',
+    redemption: '登录 Amazon.com → 账户 → 礼品卡 → 输入兑换码',
+    icon: '📦',
+    tags: ['热门', '美国'],
+    inStock: true,
+  },
+  {
+    id: 'amazon-jp-5000',
+    name: 'Amazon 日本礼品卡',
+    nameEn: 'Amazon Japan Gift Card',
+    category: 'gift-cards',
+    price: 5000,
+    currency: 'JPY',
+    region: ['JP'],
+    description: 'Amazon.co.jp 礼品卡，可用于购买日本亚马逊上的各类商品，包括日文书籍、电子产品、动漫周边等。',
+    descriptionEn: 'Amazon.co.jp Gift Card for purchasing items on Amazon Japan.',
+    redemption: '登录 Amazon.co.jp → 账户 → ギフトカード → 输入兑换码',
+    icon: '🇯🇵',
+    tags: ['日本', '热门'],
+    inStock: true,
+  },
+  {
+    id: 'google-play-50',
+    name: 'Google Play 礼品卡',
+    nameEn: 'Google Play Gift Card',
+    category: 'gift-cards',
+    price: 50,
+    currency: 'USD',
+    region: ['US', 'UK', 'EU'],
+    description: 'Google Play 礼品卡可用于购买应用、游戏、电影、书籍和订阅服务。适用于 Android 设备。',
+    descriptionEn: 'Google Play Gift Card for apps, games, movies, books and subscriptions on Android.',
+    redemption: '打开 Google Play → 兑换 → 输入兑换码',
+    icon: '▶️',
+    tags: ['热门', '全球'],
+    inStock: true,
+  },
+  {
+    id: 'apple-itunes-25',
+    name: 'Apple iTunes 礼品卡',
+    nameEn: 'Apple iTunes Gift Card',
+    category: 'gift-cards',
+    price: 25,
+    currency: 'USD',
+    region: ['US', 'UK', 'EU', 'JP'],
+    description: 'Apple iTunes 礼品卡可用于 App Store、Apple Music、iCloud 等苹果服务的购买和订阅。',
+    descriptionEn: 'Apple iTunes Gift Card for App Store, Apple Music, iCloud and more.',
+    redemption: '打开 App Store → 今日 → 兑换 → 输入兑换码',
+    icon: '🍎',
+    tags: ['热门', '全球'],
+    inStock: true,
+  },
+  {
+    id: 'steam-50',
+    name: 'Steam 钱包充值卡',
+    nameEn: 'Steam Wallet Card',
+    category: 'gaming',
+    price: 50,
+    currency: 'USD',
+    region: ['US', 'EU', 'GLOBAL'],
+    description: 'Steam 钱包充值卡可用于购买 Steam 平台上的数千款游戏、DLC 和游戏内物品。',
+    descriptionEn: 'Steam Wallet Card for purchasing games, DLC and in-game items on Steam.',
+    redemption: '打开 Steam → 游戏 → 充值 Steam 钱包 → 输入兑换码',
+    icon: '🎮',
+    tags: ['游戏', '热门'],
+    inStock: true,
+  },
+  {
+    id: 'playstation-50',
+    name: 'PlayStation Store 礼品卡',
+    nameEn: 'PlayStation Store Gift Card',
+    category: 'gaming',
+    price: 50,
+    currency: 'USD',
+    region: ['US', 'EU', 'JP'],
+    description: 'PlayStation Store 礼品卡可用于购买 PS4/PS5 游戏、附加内容和 PlayStation Plus 订阅。',
+    descriptionEn: 'PlayStation Store Gift Card for PS4/PS5 games, add-ons and PS Plus subscriptions.',
+    redemption: '打开 PlayStation Store → 兑换码 → 输入兑换码',
+    icon: '🎯',
+    tags: ['游戏', '主机'],
+    inStock: true,
+  },
+  {
+    id: 'nintendo-50',
+    name: 'Nintendo eShop 礼品卡',
+    nameEn: 'Nintendo eShop Gift Card',
+    category: 'gaming',
+    price: 50,
+    currency: 'USD',
+    region: ['US', 'EU', 'JP'],
+    description: 'Nintendo eShop 礼品卡可用于购买 Nintendo Switch 游戏和下载内容。',
+    descriptionEn: 'Nintendo eShop Gift Card for Nintendo Switch games and downloadable content.',
+    redemption: '打开 Nintendo eShop → 输入兑换码',
+    icon: '🍄',
+    tags: ['游戏', 'Switch'],
+    inStock: true,
+  },
+  {
+    id: 'xbox-50',
+    name: 'Xbox 礼品卡',
+    nameEn: 'Xbox Gift Card',
+    category: 'gaming',
+    price: 50,
+    currency: 'USD',
+    region: ['US', 'EU'],
+    description: 'Xbox 礼品卡可用于购买 Xbox 游戏和 Game Pass 订阅服务。',
+    descriptionEn: 'Xbox Gift Card for Xbox games and Game Pass subscriptions.',
+    redemption: '打开 Microsoft Store → 兑换码 → 输入兑换码',
+    icon: '🟢',
+    tags: ['游戏', 'Xbox'],
+    inStock: true,
+  },
+  {
+    id: 'spotify-30',
+    name: 'Spotify Premium 礼品卡',
+    nameEn: 'Spotify Premium Gift Card',
+    category: 'entertainment',
+    price: 30,
+    currency: 'USD',
+    region: ['US', 'EU', 'GLOBAL'],
+    description: 'Spotify Premium 礼品卡可用于享受无广告音乐流媒体服务，支持离线下载和高品质音频。',
+    descriptionEn: 'Spotify Premium Gift Card for ad-free music streaming with offline downloads.',
+    redemption: '打开 Spotify → 账户 → 兑换礼品卡 → 输入兑换码',
+    icon: '🎵',
+    tags: ['音乐', '热门'],
+    inStock: true,
+  },
+  {
+    id: 'netflix-60',
+    name: 'Netflix 礼品卡',
+    nameEn: 'Netflix Gift Card',
+    category: 'entertainment',
+    price: 60,
+    currency: 'USD',
+    region: ['US', 'EU', 'GLOBAL'],
+    description: 'Netflix 礼品卡可用于支付 Netflix 订阅费用，享受海量影视内容。',
+    descriptionEn: 'Netflix Gift Card for Netflix streaming subscription.',
+    redemption: '登录 Netflix.com → 充值 → 输入兑换码',
+    icon: '📺',
+    tags: ['影视', '热门'],
+    inStock: true,
+  },
+  {
+    id: 'disney-plus-30',
+    name: 'Disney+ 礼品卡',
+    nameEn: 'Disney+ Gift Card',
+    category: 'entertainment',
+    price: 30,
+    currency: 'USD',
+    region: ['US', 'EU'],
+    description: 'Disney+ 礼品卡可用于订阅 Disney+ 流媒体服务，观看迪士尼、漫威、星球大战等内容。',
+    descriptionEn: 'Disney+ Gift Card for Disney, Marvel, Star Wars streaming content.',
+    redemption: '登录 DisneyPlus.com → 兑换 → 输入兑换码',
+    icon: '🏰',
+    tags: ['影视'],
+    inStock: true,
+  },
+  {
+    id: 'walmart-50',
+    name: 'Walmart 礼品卡',
+    nameEn: 'Walmart Gift Card',
+    category: 'shopping',
+    price: 50,
+    currency: 'USD',
+    region: ['US'],
+    description: 'Walmart 礼品卡可在全美 Walmart 门店和线上商城使用，涵盖食品、日用品、电子产品等。',
+    descriptionEn: 'Walmart Gift Card for use at Walmart stores and online.',
+    redemption: '登录 Walmart.com → 礼品卡 → 输入兑换码',
+    icon: '🛒',
+    tags: ['购物', '美国'],
+    inStock: true,
+  },
+  {
+    id: 'target-50',
+    name: 'Target 礼品卡',
+    nameEn: 'Target Gift Card',
+    category: 'shopping',
+    price: 50,
+    currency: 'USD',
+    region: ['US'],
+    description: 'Target 礼品卡可在 Target 门店和线上商城使用，购买时尚、家居、电子等各类商品。',
+    descriptionEn: 'Target Gift Card for Target stores and online shopping.',
+    redemption: '登录 Target.com → 礼品卡 → 输入兑换码',
+    icon: '🎯',
+    tags: ['购物', '美国'],
+    inStock: true,
+  },
+  {
+    id: 'uber-eats-25',
+    name: 'Uber Eats 礼品卡',
+    nameEn: 'Uber Eats Gift Card',
+    category: 'food',
+    price: 25,
+    currency: 'USD',
+    region: ['US', 'EU', 'GLOBAL'],
+    description: 'Uber Eats 礼品卡可用于在 Uber Eats 平台订购美食外卖，覆盖数千家餐厅。',
+    descriptionEn: 'Uber Eats Gift Card for food delivery from thousands of restaurants.',
+    redemption: '打开 Uber Eats → 钱包 → 添加礼品卡 → 输入兑换码',
+    icon: '🍔',
+    tags: ['美食', '外卖'],
+    inStock: true,
+  },
+  {
+    id: 'starbucks-25',
+    name: 'Starbucks 礼品卡',
+    nameEn: 'Starbucks Gift Card',
+    category: 'food',
+    price: 25,
+    currency: 'USD',
+    region: ['US', 'EU', 'GLOBAL'],
+    description: 'Starbucks 礼品卡可在全球星巴克门店使用，购买咖啡、茶饮和食品。',
+    descriptionEn: 'Starbucks Gift Card for coffee, tea and food at Starbucks worldwide.',
+    redemption: '打开 Starbucks App → 添加礼品卡 → 输入兑换码',
+    icon: '☕',
+    tags: ['美食', '咖啡'],
+    inStock: true,
+  },
+  {
+    id: 'att-topup-30',
+    name: 'AT&T 话费充值',
+    nameEn: 'AT&T Mobile Top-up',
+    category: 'mobile-topup',
+    price: 30,
+    currency: 'USD',
+    region: ['US'],
+    description: 'AT&T 预付费手机话费充值，即时到账，支持通话、短信和数据流量。',
+    descriptionEn: 'AT&T prepaid mobile top-up, instant delivery for calls, texts and data.',
+    redemption: '充值将自动到账到您的 AT&T 预付费号码',
+    icon: '📡',
+    tags: ['话费', '美国'],
+    inStock: true,
+  },
+  {
+    id: 'tmobile-topup-30',
+    name: 'T-Mobile 话费充值',
+    nameEn: 'T-Mobile Mobile Top-up',
+    category: 'mobile-topup',
+    price: 30,
+    currency: 'USD',
+    region: ['US'],
+    description: 'T-Mobile 预付费手机话费充值，即时到账，享受全美覆盖网络。',
+    descriptionEn: 'T-Mobile prepaid mobile top-up with nationwide coverage.',
+    redemption: '充值将自动到账到您的 T-Mobile 预付费号码',
+    icon: '📶',
+    tags: ['话费', '美国'],
+    inStock: true,
+  },
+  {
+    id: 'softbank-topup-3000',
+    name: 'SoftBank 话费充值',
+    nameEn: 'SoftBank Mobile Top-up',
+    category: 'mobile-topup',
+    price: 3000,
+    currency: 'JPY',
+    region: ['JP'],
+    description: 'SoftBank 预付费手机话费充值，即时到账，适用于日本 SoftBank 用户。',
+    descriptionEn: 'SoftBank prepaid mobile top-up for SoftBank users in Japan.',
+    redemption: '充值将自动到账到您的 SoftBank 预付费号码',
+    icon: '🇯🇵',
+    tags: ['话费', '日本'],
+    inStock: true,
+  },
+  {
+    id: 'roblox-25',
+    name: 'Roblox 礼品卡',
+    nameEn: 'Roblox Gift Card',
+    category: 'gaming',
+    price: 25,
+    currency: 'USD',
+    region: ['US', 'EU', 'GLOBAL'],
+    description: 'Roblox 礼品卡可用于购买 Robux 虚拟货币，在 Roblox 平台上购买游戏道具和配件。',
+    descriptionEn: 'Roblox Gift Card for Robux virtual currency on the Roblox platform.',
+    redemption: '打开 Roblox → 兑换礼品卡 → 输入兑换码',
+    icon: '🧱',
+    tags: ['游戏', '儿童'],
+    inStock: true,
+  },
+  {
+    id: 'doordash-25',
+    name: 'DoorDash 礼品卡',
+    nameEn: 'DoorDash Gift Card',
+    category: 'food',
+    price: 25,
+    currency: 'USD',
+    region: ['US', 'CA', 'AU'],
+    description: 'DoorDash 礼品卡可用于在 DoorDash 平台订购美食外卖，覆盖数十万家餐厅。',
+    descriptionEn: 'DoorDash Gift Card for food delivery from hundreds of thousands of restaurants.',
+    redemption: '打开 DoorDash → 礼品卡 → 输入兑换码',
+    icon: '🚗',
+    tags: ['美食', '外卖'],
+    inStock: true,
+  },
+];
+
+export function searchProducts(query: string): Product[] {
+  const q = query.toLowerCase();
+  return products.filter(
+    (p) =>
+      p.name.toLowerCase().includes(q) ||
+      p.nameEn.toLowerCase().includes(q) ||
+      p.tags.some((t) => t.toLowerCase().includes(q)) ||
+      p.category.includes(q) ||
+      p.description.toLowerCase().includes(q)
+  );
+}
+
+export function getProductsByCategory(category: ProductCategory): Product[] {
+  return products.filter((p) => p.category === category);
+}
+
+export function getProductById(id: string): Product | undefined {
+  return products.find((p) => p.id === id);
+}
