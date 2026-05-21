@@ -12,4 +12,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['@consenlabs/tcx-wasm'],
   },
+  build: {
+    target: 'es2023',
+  },
 })
